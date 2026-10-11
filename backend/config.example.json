@@ -1,0 +1,73 @@
+{
+  "trustProxyHops": 1,
+  "maxKeys": 100000,
+  "tiers": {
+    "public": {
+      "windowSec": 60,
+      "max": 60
+    },
+    "authenticated": {
+      "windowSec": 60,
+      "max": 300
+    },
+    "auth": {
+      "login": {
+        "ip": {
+          "windowSec": 900,
+          "max": 30
+        },
+        "account": {
+          "windowSec": 900,
+          "max": 10
+        },
+        "backoff": {
+          "on": "failure",
+          "freeFailures": 3,
+          "ipFreeFailures": 10,
+          "baseSec": 2,
+          "factor": 2,
+          "maxSec": 900,
+          "resetAfterSec": 3600
+        }
+      },
+      "signup": {
+        "ip": {
+          "windowSec": 3600,
+          "max": 10
+        },
+        "account": {
+          "windowSec": 3600,
+          "max": 3
+        },
+        "backoff": {
+          "on": "attempt",
+          "freeFailures": 2,
+          "ipFreeFailures": 6,
+          "baseSec": 30,
+          "factor": 2,
+          "maxSec": 3600,
+          "resetAfterSec": 7200
+        }
+      },
+      "passwordReset": {
+        "ip": {
+          "windowSec": 3600,
+          "max": 10
+        },
+        "account": {
+          "windowSec": 3600,
+          "max": 3
+        },
+        "backoff": {
+          "on": "attempt",
+          "freeFailures": 1,
+          "ipFreeFailures": 5,
+          "baseSec": 60,
+          "factor": 2,
+          "maxSec": 3600,
+          "resetAfterSec": 7200
+        }
+      }
+    }
+  }
+}

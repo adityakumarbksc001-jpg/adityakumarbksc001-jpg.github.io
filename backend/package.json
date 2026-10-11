@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-backend-toolkit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiered rate limiting and strict input validation. No third-party packages.",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test",
+    "audit": "npm audit --audit-level=low"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

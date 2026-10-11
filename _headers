@@ -1,0 +1,13 @@
+# Real security headers (Netlify and Cloudflare Pages read this file; GitHub Pages ignores it).
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'sha256-4O/pMiTZdFoieGuoV8YVK6NaAQ8IZ/gXhMvDjXRX45A=' 'sha256-2CdIOkEZcGCA2a3t1zQjw1kaS0bEZFG05c2rJmgqy0U=' 'sha256-EwFklKykb+CAxUlX40O2nhqQDPnHkJ4T2Nd157o1Urs=' 'sha256-6FPyCRg92k+gCtQ9Y8ZkyYlUZBNITQpgXYAZqa40pks=' 'sha256-LOqECelcQ8SA3NCf0j5LBmBwYirWADTKmlDJNp9XqaQ='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self' data: blob:; frame-src https://www.youtube-nocookie.com; connect-src 'none'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/sw.js
+  Cache-Control: no-cache

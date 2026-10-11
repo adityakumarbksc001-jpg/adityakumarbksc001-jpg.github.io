@@ -1,0 +1,13 @@
+#!/bin/sh
+# Blocks a commit that contains a secret or an out-of-date security policy.
+# Install once:   cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+python3 scripts/secret-scan.py --staged || {
+  echo "Commit blocked: a possible secret was found. Remove it, or add 'secret-scan: ignore' to the line if it is a false alarm."
+  exit 1
+}
+if [ -f csp-hash.py ] && [ -f index.html ]; then
+  python3 csp-hash.py --check index.html || {
+    echo "Commit blocked: run  python3 csp-hash.py index.html  and commit again."
+    exit 1
+  }
+fi
